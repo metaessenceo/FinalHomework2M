@@ -1,12 +1,14 @@
 
-string[] filterByMaxLength(string[] inputArray, maxLength) {
+string[] filterByMaxLength(string[] inputArray, int maxLength) {
     string[] outputArray = new string[inputArray.Length];
 
+    int outputArrayIndex = 0;
     for (int i = 0; i < inputArray.Length; i++) {
         string element = inputArray[i];
 
         if (element.Length <= maxLength) {
-            outputArray[i] = element;
+            outputArray[outputArrayIndex] = element;
+            outputArrayIndex++;
         }
     }
     return outputArray;
