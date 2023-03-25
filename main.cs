@@ -1,12 +1,24 @@
-string[] inputArray = {"hello", "2", "world", ":-)"};
-string[] outputArray = new string[inputArray.Length];
 
-for (int i = 0; i < inputArray.Length; i++) {
-    string element = inputArray[i];
+string[] filterByMaxLength(string[] inputArray, maxLength) {
+    string[] outputArray = new string[inputArray.Length];
 
-    if (element.Length <=3) {
-        Console.WriteLine(element);
+    for (int i = 0; i < inputArray.Length; i++) {
+        string element = inputArray[i];
 
-        outputArray[i] = element;
+        if (element.Length <= maxLength) {
+            outputArray[i] = element;
+        }
+    }
+    return outputArray;
+}
+
+
+void writeArray(string[] inputArray) {
+    for (int i = 0; i < inputArray.Length; i++) {
+        Console.WriteLine(inputArray[i]);
     }
 }
+
+string[] inputArray = {"hello", "2", "world", ":-)"};
+string[] outputArray = filterByMaxLength(inputArray, 3);
+writeArray(outputArray);
